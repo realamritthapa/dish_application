@@ -1,0 +1,65 @@
+.display-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 10%;
+  padding: 20px;
+}
+
+.ingredients {
+  width: 40%;
+  height: 400px;
+  overflow: scroll;
+}
+.food-label {
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.dishinfo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-btn {
+  display: flex;
+  justify-content: space-around;
+}
+.other-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.other-info > div {
+  margin: auto;
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid black;
+  height: 90px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.calorie {
+  background-color: aquamarine;
+}
+.time {
+  background-color: lightcyan;
+}
+
+.yield {
+  background-color: bisque;
+}

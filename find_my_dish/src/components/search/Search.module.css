@@ -1,0 +1,13 @@
+.search_bar {
+  width: 40%;
+  /* position: absolute; */
+  left: 20px;
+  top: 40%;
+  box-shadow: 5px 5px 10px 3px lightgray;
+}
+
+@media screen and (max-width: 768px) {
+  .search_bar {
+    width: 300px;
+  }
+}

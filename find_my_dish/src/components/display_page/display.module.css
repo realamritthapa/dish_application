@@ -1,0 +1,8 @@
+.mini_bar {
+  margin-left: 15%;
+  width: 40%;
+  /* position: absolute; */
+  left: 20px;
+  top: 40%;
+  box-shadow: 5px 5px 10px 3px lightgray;
+}

@@ -1,0 +1,14 @@
+.logo {
+  width: 150px; /* Adjust the width and height to set the size of the blob */
+  height: 100px;
+  background-color: #c3edc0;
+  border-radius: 50% 30% 70% 20% / 60% 40% 50% 30%; /* Blob-like shape */
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+}
+
+.logo-img {
+  max-width: 70%;
+  max-height: 70%;
+}

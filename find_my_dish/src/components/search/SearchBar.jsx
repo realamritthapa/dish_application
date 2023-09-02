@@ -9,7 +9,7 @@ import { Padding, Search } from "@mui/icons-material";
 async function getSuggestions(search) {
   console.log(search);
   let data = await fetch(
-    `https://dish-backend.onrender.com/autocomplete?data=${search}`
+    `https://dish-server.onrender.com/autocomplete?data=${search}`
   )
     .then((response) => response.json())
     .then((data) => {

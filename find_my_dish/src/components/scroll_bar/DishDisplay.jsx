@@ -11,7 +11,7 @@ const DishDisplay = React.memo((props) => {
       async function fetchData() {
         try {
           const response = await fetch(
-            `https://dish-backend.onrender.com/recipe?data=${props.data}`
+            `https://dish-server.onrender.com/recipe?data=${props.data}`
           );
           const hits = await response.json();
           setData(hits);

@@ -13,7 +13,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 async function getSuggestions(search) {
   let data = await fetch(
-    `https://dish-backend.onrender.com/autocomplete?data=${search}`
+    `https://dish-server.onrender.com/autocomplete?data=${search}`
   )
     .then((response) => response.json())
     .then((data) => {

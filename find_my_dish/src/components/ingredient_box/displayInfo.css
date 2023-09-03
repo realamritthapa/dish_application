@@ -2,7 +2,9 @@
   display: flex;
   justify-content: space-between;
 }
-
+a {
+  text-decoration: none;
+}
 .main-image {
   width: 300px;
   height: 300px;

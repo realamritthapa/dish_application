@@ -1,0 +1,22 @@
+.text-field {
+  display: flex;
+  margin-top: 10%;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.text-box {
+  margin-right: 50px;
+  width: 50%;
+  height: 250px;
+  border: solid 2px red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15%;
+  background-color: beige;
+}
+.text-instruction {
+  width: 90%;
+  font-size: larger;
+}

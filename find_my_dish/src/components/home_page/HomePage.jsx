@@ -1,7 +1,6 @@
 import React from "react";
 import SearchBar from "../search/SearchBar";
 import "./home.css";
-
 export default function HomePage({ funct }) {
   return (
     <div className='back'>

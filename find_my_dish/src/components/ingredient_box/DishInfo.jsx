@@ -3,8 +3,10 @@ import "./displayInfo.css";
 import { Button } from "@mui/material";
 import Ingredient from "./Ingredient";
 import OtherInfo from "./OtherInfo";
+import TextContent from "../text_page/TextContent";
 export default function DishInfo({ info }) {
   const [showIng, setShow] = useState(false);
+  const [textInfo, setTextInfo] = useState(true);
   const ingredients = info.ingredients;
   const [buttonTxt, setText] = useState("Ingredients");
   useEffect(() => {
@@ -13,6 +15,10 @@ export default function DishInfo({ info }) {
   function handleClick() {
     setShow(!showIng);
     setText(showIng ? "Ingredients" : "Info");
+  }
+
+  function showText() {
+    setTextInfo(!textInfo);
   }
   return (
     <div className='dishinfo-container'>
@@ -25,7 +31,6 @@ export default function DishInfo({ info }) {
               <Button
                 sx={{
                   ":hover": { bgcolor: "#A1CCD1" },
-                  width: "100px",
                   backgroundColor: "#c3edc0",
                   color: "black",
                 }}
@@ -41,6 +46,17 @@ export default function DishInfo({ info }) {
                 color: "black",
               }}
               variant='contained'
+              onClick={showText}
+            >
+              Text
+            </Button>
+            <Button
+              sx={{
+                ":hover": { bgcolor: "#A1CCD1" },
+                backgroundColor: "#c3edc0",
+                color: "black",
+              }}
+              variant='contained'
               onClick={handleClick}
             >
               {buttonTxt}
@@ -48,7 +64,9 @@ export default function DishInfo({ info }) {
           </div>
         </div>
 
-        {showIng ? (
+        {textInfo ? (
+          <TextContent />
+        ) : showIng ? (
           <Ingredient data={ingredients} />
         ) : (
           <OtherInfo data={info} />

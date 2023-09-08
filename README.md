@@ -9,6 +9,7 @@
 <li>Express</li>
 </ul>
 <h6>Live on: <a href="https://find-my-dish.web.app">https://find-my-dish.web.app</a></h6>
+<p style= "text-align:center" >***** the first search will take time to load because the server cools down after certain time of activity since it's a free service *****</p>
 <img src="assets/dish_video.gif" width="90%">
 <p>This is a recipe search website that utilizes the Edamam Api, unlocking access to over 10,000 recipes for you.</p>
 <p>I had a blast building this project, getting my hands dirty with React hooks and learning the ropes of working with APIs. It's been an awesome sandbox for polishing my design skills and understanding how the front and back-end vibes together.</p>

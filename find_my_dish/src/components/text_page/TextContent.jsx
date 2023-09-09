@@ -1,18 +1,29 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
-import { Button } from "@mui/material";
+import { Button, Icon } from "@mui/material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import SmsFailedIcon from "@mui/icons-material/SmsFailed";
 import "react-phone-input-2/lib/style.css";
 import "./textContent.css";
-export default function TextContent() {
+export default function TextContent({ data, name }) {
   const [number, setNumber] = useState("");
+  const [confirmation, setConfirmation] = useState("");
+  const [buttonClicked, setButtonClicked] = useState(false);
+  let foodList;
   function handleChange(value) {
     setNumber(value);
   }
-  function handleClick() {
-    console.log("hello");
-    console.log(number);
-
-    console.log(typeof number);
+  async function handleClick() {
+    setButtonClicked(!buttonClicked);
+    foodList = data.map((obj) => obj.food);
+    const confirmation = await fetch(
+      `http://localhost:8000/text/?number=${number}&data=${foodList}&foodName=${name}`
+    )
+      .then((response) => response.json())
+      .then((confirm) => {
+        setConfirmation(confirm);
+        console.log(confirm);
+      });
   }
   return (
     <div className='text-box'>
@@ -33,6 +44,8 @@ export default function TextContent() {
         <Button onClick={handleClick} variant='contained'>
           Send
         </Button>
+        {buttonClicked &&
+          (confirmation === 200 ? <CheckCircleIcon /> : <SmsFailedIcon />)}
       </div>
     </div>
   );

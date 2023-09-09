@@ -65,7 +65,7 @@ export default function DishInfo({ info }) {
         </div>
 
         {textInfo ? (
-          <TextContent />
+          <TextContent data={ingredients} name={info.label} />
         ) : showIng ? (
           <Ingredient data={ingredients} />
         ) : (

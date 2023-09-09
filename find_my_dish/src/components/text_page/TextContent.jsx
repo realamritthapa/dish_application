@@ -5,9 +5,10 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import SmsFailedIcon from "@mui/icons-material/SmsFailed";
 import "react-phone-input-2/lib/style.css";
 import "./textContent.css";
+import { Error } from "@mui/icons-material";
 export default function TextContent({ data, name }) {
   const [number, setNumber] = useState("");
-  const [confirmation, setConfirmation] = useState("");
+  const [confirmation, setConfirmation] = useState();
   const [buttonClicked, setButtonClicked] = useState(false);
   let foodList;
   function handleChange(value) {
@@ -16,14 +17,19 @@ export default function TextContent({ data, name }) {
   async function handleClick() {
     setButtonClicked(!buttonClicked);
     foodList = data.map((obj) => obj.food);
-    const confirmation = await fetch(
-      `http://localhost:8000/text/?number=${number}&data=${foodList}&foodName=${name}`
-    )
-      .then((response) => response.json())
-      .then((confirm) => {
-        setConfirmation(confirm);
-        console.log(confirm);
-      });
+    try {
+      const response = await fetch(
+        `http://localhost:8000/text/?number=${number}&data=${foodList}&foodName=${name}`
+      );
+      console.log(response);
+      if (!response.ok) {
+        setConfirmation(response.status);
+        throw new Error("Network response was on ok");
+      }
+      setConfirmation(response.status);
+    } catch (e) {
+      console.log(e);
+    }
   }
   return (
     <div className='text-box'>

@@ -5,28 +5,33 @@ const myNumber = `${process.env.TWILIO_PHONE_NUMBER}`;
 const client = require("twilio")(accountSid, authToken);
 const sendText = (req, res) => {
   const clientNumber = req.query.number;
-  const dataToSend = req.query.data;
+  const dataToSend = req.query.data.split(",");
+  const dataFormated = dataToSend
+    .map((item, index) => `${index + 1}. ${item}`)
+    .join("\n");
   const foodName = req.query.foodName;
-  if (typeof dataToSend !== "string" || clientNumber !== TWILIO_PHONE_NUMBER) {
+  if (typeof dataFormated !== "string") {
     return res.sendStatus(400); // Bad request due to invalid data type or client number mismatch
   }
 
   client.messages
     .create({
-      body: `Ingredients for ${foodName}:
-        ${dataToSend}`,
+      body: "Ingredients for " + foodName + ":" + "\n\n" + dataFormated,
       from: `+${myNumber}`,
       to: `+${clientNumber}`,
     })
     .then((message) => {
-      console.log(message.sid);
-      res.sendStatus(200);
+      if (
+        message.status === "sent" ||
+        message.status === "queued" ||
+        message.status === "delivered"
+      ) {
+        res.sendStatus(200);
+      }
     })
     .catch((e) => {
-      console.log(e);
-      res.sendStatus404;
-    })
-    .done();
+      res.sendStatus(e.status);
+    });
 };
 
 module.exports = sendText;

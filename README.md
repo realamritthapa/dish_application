@@ -13,7 +13,7 @@
 <h3>Overall demo:</h3>
 <img src="assets/dish_video.gif" width="80%">
 
-<h3>Text feature:</h3>
+<h3>Messaging feature:</h3>
 <img src="assets/textFeature.gif" width="80%"/>
 <p>This is a recipe search website that utilizes the Edamam Api, unlocking access to over 10,000 recipes for you.</p>
 <p>I had a blast building this project, getting my hands dirty with React hooks and learning the ropes of working with APIs. It's been an awesome sandbox for polishing my design skills and understanding how the front and back-end vibes together.</p>

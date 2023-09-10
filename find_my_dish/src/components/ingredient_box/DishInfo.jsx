@@ -6,7 +6,7 @@ import OtherInfo from "./OtherInfo";
 import TextContent from "../text_page/TextContent";
 export default function DishInfo({ info }) {
   const [showIng, setShow] = useState(false);
-  const [textInfo, setTextInfo] = useState(true);
+  const [textInfo, setTextInfo] = useState(false);
   const ingredients = info.ingredients;
   const [buttonTxt, setText] = useState("Ingredients");
   useEffect(() => {

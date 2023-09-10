@@ -14,6 +14,7 @@
 <img src="assets/dish_video.gif" width="80%">
 
 <h3>Messaging feature:</h3>
+<p>Please note since I am using free version to the api, its only able to send text to verified numbers which is only mine at this moment. Which also means on the demo that number is my number so please don't spam ingredient list using my number hahhaha thank you</p>
 <img src="assets/textFeature.gif" width="80%"/>
 <p>This is a recipe search website that utilizes the Edamam Api, unlocking access to over 10,000 recipes for you.</p>
 <p>I had a blast building this project, getting my hands dirty with React hooks and learning the ropes of working with APIs. It's been an awesome sandbox for polishing my design skills and understanding how the front and back-end vibes together.</p>

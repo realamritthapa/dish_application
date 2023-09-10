@@ -19,7 +19,7 @@ export default function TextContent({ data, name }) {
     foodList = data.map((obj) => obj.food);
     try {
       const response = await fetch(
-        `http://localhost:8000/text/?number=${number}&data=${foodList}&foodName=${name}`
+        `https://dish-server.onrender.com/text/?number=${number}&data=${foodList}&foodName=${name}`
       );
       console.log(response);
       if (!response.ok) {
